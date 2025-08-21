@@ -1,11 +1,15 @@
 //Importações
-const express           = require('express');
-const router            = express.Router();
+const express = require("express");
+const router = express.Router();
 
-const loginController   = require("../controllers/login/Login");
-const recoverPasswordController = require("../controllers/emailBuilder/recoverPassword")
+const loginController = require("../controllers/login/Login");
+const recoverPasswordController = require("../controllers/emailBuilder/recoverPassword");
 const authenticate = require("../middleware/authorization");
 //Fim das Importações
+
+router.get("/", (req, res) => {
+  res.send("Rota teste da api!");
+});
 
 //Rotas de Login
 router.post("/login", loginController.login); //Fazer o Login no APP
